@@ -155,11 +155,6 @@ There are four important ideas in this programme.
 
 **Output:** `lcd.print(answers[answer])` places the selected phrase on the screen. The `delay(500)` creates a pause before the reveal. Even the pause is part of the artistic experience.
 
-### What does this have to do with AI?
-
-The electronic oracle chooses a **prewritten phrase** using pseudorandom numbers. A generative AI system works differently: it creates text using statistical patterns learned during training, often with probability-based choices between possible next tokens. It can respond to the words in a prompt, unlike our simple Arduino programme, but that is not the same as predicting the future.
-
-**Who writes the possible answers? What does chance contribute? Why might someone believe or distrust a machine's response?** These questions matter for both a toy oracle and systems that appear more intelligent.
 
 ## 7. Experiment with the code
 
