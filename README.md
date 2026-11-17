@@ -12,7 +12,7 @@ What makes a prediction feel convincing? Is it the words, the way an answer is r
 
 ### The example: Jicarilla Calabazo
 
-![The Jicarilla Calabazo, a hand-painted Mexican gourd beside electronic components](assets/reference-jicarilla-calabazo.jpg)
+![The Jicarilla Calabazo, a hand painted Mexican gourd as oracle](jicarilla-oracle.jpeg)
 
 The example brought to class is a **Jicarilla Calabazo**, a small, hand painted Mexican gourd vessel. Its rounded form, dark ground and floral decoration connect it to traditions of decorating gourds in Mexico. We do not know the maker or the precise community in which this particular object was made, and we are not presenting it as an object traditionally used for divination. It has its own material, artistic and cultural history before electronics enter the work.
 
@@ -38,7 +38,7 @@ Wokwi represents the tilt switch with a slide switch and simulates an Arduino UN
 
 ## 3. The tilt switch: the gesture that activates the oracle
 
-![Illustration of a two-legged tilt switch with open and closed contacts](assets/tilt-switch.jpg)
+![Illustration of a two-legged tilt switch with open and closed contacts] (tilt-switch.jpg)
 
 The small black cylinder in your kit is a **tilt switch**. Inside is a movable metal contact, often a tiny ball. When the switch changes orientation, the contact can move and either join or separate two conducting parts. This is how an ordinary movement becomes an electrical signal.
 
