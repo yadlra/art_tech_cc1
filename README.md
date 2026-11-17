@@ -1,12 +1,12 @@
 # Electronic oracles: magic, making and randomness
 
-**Build an electronic Magic 8 Ball with an Arduino, a tilt switch and a small screen. Then decide what your oracle should say, how it should respond and what kind of object it could become.**
+**We are making an electronic Magic 8 Ball with an Arduino, a tilt switch and the LCD screen. Then decide what your oracle should say, how it should respond and what kind of object it could become.**
 
 ## 1. What is a Magic 8 Ball?
 
 ![An illustrated classic Magic 8 Ball](assets/magic-eight-ball.png)
 
-The Magic 8 Ball is a fortune-telling toy. Someone asks a question, turns the black ball, and reads an answer through a window. Inside the traditional toy, a many-sided die floats in liquid; whichever face settles against the window becomes the answer. It is a form of playful divination, not an object that knows the future.
+The Magic 8 Ball is a fortune telling toy. Someone asks a question, turns the black ball, and reads an answer through a window. Inside the traditional toy, a many sided die floats in liquid; whichever face settles against the window becomes the answer. It is a form of playful divination, not an object that knows the future.
 
 What makes a prediction feel convincing? Is it the words, the way an answer is revealed, the act of asking, or the object itself? People have used many different objects and practices for divination, each with its own history. In this project, we will explore what happens when a simple electronic circuit takes on the role of an oracle.
 
@@ -14,15 +14,11 @@ What makes a prediction feel convincing? Is it the words, the way an answer is r
 
 ![The Jicarilla Calabazo, a hand-painted Mexican gourd beside electronic components](assets/reference-jicarilla-calabazo.jpg)
 
-The example brought to class is a **Jicarilla Calabazo**, a small, hand-painted Mexican gourd vessel. Its rounded form, dark ground and floral decoration connect it to traditions of decorating gourds in Mexico. We do not know the maker or the precise community in which this particular object was made, and we are not presenting it as an object traditionally used for divination. It has its own material, artistic and cultural history before electronics enter the work.
+The example brought to class is a **Jicarilla Calabazo**, a small, hand painted Mexican gourd vessel. Its rounded form, dark ground and floral decoration connect it to traditions of decorating gourds in Mexico. We do not know the maker or the precise community in which this particular object was made, and we are not presenting it as an object traditionally used for divination. It has its own material, artistic and cultural history before electronics enter the work.
 
-**Names in Indigenous languages.** In **Nahuatl**, *xicalli* refers to a gourd vessel and is the origin of the Spanish word *jícara*. In **Tu'un Savi (Mixtec) spoken in Cuatzoquitengo, Guerrero**, *yaxin* is documented as a word for *jícara*. Another Guerrero variant, from Ayutla de los Libres, records *yaxin’*. These are regionally documented names for a jícara, not a claim that every Mixtec-speaking community uses the same word or that we know which language the artisan who made this object speaks. [Nahuatl dictionary](https://gdn.iib.unam.mx/diccionario/xicalli/168626) and [Alejandro de Ávila, *Mixtec plant nomenclature and classification*, p. 131](https://escholarship.org/content/qt4pp843br/qt4pp843br_noSplash_a027f4c0d59b8e5e3576ea5022ba8526.pdf).
+Here, the electronic response is placed in conversation with a crafted surface and so the screen does not need to be the centre of the artwork and the gestures of holding with the turning and consulting the object can become part of the experience.
 
-[View the Jicarilla Calabazo reference reel shared for this example](https://www.instagram.com/reel/DTx-E9OkQDB/?hl=en).
-
-Here, the electronic response is placed in conversation with a crafted surface. The screen does not need to be the centre of the artwork. The gestures of holding, turning and consulting the object can become part of the experience.
-
-**Think about:** What might change if the same words appeared inside a hand-painted object rather than a black plastic ball? How does an object invite us to interact with it?
+**Think about:** What might change if the same words appeared inside a hand painted object rather than a black plastic ball? How does an object invite us to interact with it?
 
 ## 2. What you need
 
@@ -34,7 +30,7 @@ Here, the electronic response is placed in conversation with a crafted surface. 
 - the `hd44780` library by Bill Perry
 - optional paper and pen to sketch the form of your oracle
 
-You do not need extra resistors for this circuit. Keep the Arduino disconnected from power while moving wires.
+Note:  Keep the Arduino disconnected from power while moving wires.
 
 **Start with the working simulation:** [Magic 8 Ball on Wokwi](https://wokwi.com/projects/480869321505295361).
 
@@ -42,7 +38,7 @@ Wokwi represents the tilt switch with a slide switch and simulates an Arduino UN
 
 ## 3. The tilt switch: the gesture that activates the oracle
 
-![Illustration of a two-legged tilt switch with open and closed contacts](assets/tilt-switch.png)
+![Illustration of a two-legged tilt switch with open and closed contacts](assets/tilt-switch.jpg)
 
 The small black cylinder in your kit is a **tilt switch**. Inside is a movable metal contact, often a tiny ball. When the switch changes orientation, the contact can move and either join or separate two conducting parts. This is how an ordinary movement becomes an electrical signal.
 
@@ -59,8 +55,6 @@ This small component can be used beyond a Magic 8 Ball. Imagine a sculptural obj
 **Think about:** Should the oracle be shaken, slowly rotated, bowed towards, held upside down, or passed between people? How might the gesture change the experience?
 
 ## 4. The I²C LCD: the voice of the oracle
-
-![Illustration of an I2C LCD with two lines of text and four pin labels](assets/i2c-lcd1602.png)
 
 An **LCD** is a liquid crystal display. The **1602** model has two rows, each with room for **16 characters**. Its I²C adapter allows the Arduino to send text through two signal connections, **SDA** for data and **SCL** for the clock, plus power and ground. The screen has no knowledge of the question. It displays the characters the programme gives it.
 
