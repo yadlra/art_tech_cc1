@@ -1,12 +1,14 @@
 # Electronic oracles: magic, making and randomness
 
-**We are making an electronic Magic 8 Ball with an Arduino, a tilt switch and the LCD screen. Then decide what your oracle should say, how it should respond and what kind of object it could become.**
+**We are making an electronic oracle with an Arduino, a tilt switch and the LCD screen. Then decide what your oracle should say, how it should respond and what kind of object it could become.  **
 
 ## 1. What is a Magic 8 Ball?
 
 ![An illustrated classic Magic 8 Ball](assets/magic-eight-ball.png)
 
-The Magic 8 Ball is a fortune telling toy. Someone asks a question, turns the black ball, and reads an answer through a window. Inside the traditional toy, a many sided die floats in liquid; whichever face settles against the window becomes the answer. It is a form of playful divination, not an object that knows the future.
+The Magic 8 Ball is a fortune telling toy. Someone asks a question, turns the black ball, and reads an answer through a window, in our case, an LCD screen. Inside the traditional toy, a many sided die floats in liquid; whichever face settles against the window becomes the answer. It is a form of playful divination, not an object that knows the future.
+
+Like Magic 8 Balls, oracles are devices that immediately answer yes-or-no questions without revealing anything about their inner workings. The Magic 8 Ball is lighthearted, playful entertainment with preset positive, negative, and non-committal replies. Oracles span spiritual/divinatory practices, narrative prompts, or formal problem-solving tools.
 
 What makes a prediction feel convincing? Is it the words, the way an answer is revealed, the act of asking, or the object itself? People have used many different objects and practices for divination, each with its own history. In this project, we will explore what happens when a simple electronic circuit takes on the role of an oracle.
 
@@ -34,17 +36,17 @@ Note:  Keep the Arduino disconnected from power while moving wires.
 
 **Start with the working simulation:** [Magic 8 Ball on Wokwi](https://wokwi.com/projects/480869321505295361).
 
-Wokwi represents the tilt switch with a slide switch and simulates an Arduino UNO R3. In class, you will use the physical UNO R4 WiFi and its real tilt switch. The six connections and the programme work with both boards.
+Wokwi gives us the tilt switch with a slide switch and simulates an Arduino UNO R3. In class, you will use the physical UNO R4 WiFi with a tilt switch and the LCD screen. The six connections and the programme work with both boards.
 
 ## 3. The tilt switch: the gesture that activates the oracle
 
 ![Illustration of a two-legged tilt switch with open and closed contacts] (tilt-switch.jpg)
 
-The small black cylinder in your kit is a **tilt switch**. Inside is a movable metal contact, often a tiny ball. When the switch changes orientation, the contact can move and either join or separate two conducting parts. This is how an ordinary movement becomes an electrical signal.
+The small black cylinder in your kit is a **tilt switch**. Inside of it is a movable metal contact, often a tiny ball. When the switch changes orientation, the contact can move and either join or separate two conducting parts. This is how an ordinary movement becomes an electrical signal.
 
 The switch does **not** tell the Arduino the exact angle, how quickly you moved, or how hard you shook it. It only tells the board whether the electrical connection is **open** or **closed**.
 
-We connect one leg to **D2** and the other to **GND**. The code uses `INPUT_PULLUP`, which makes D2 read `HIGH` when the switch is open and `LOW` when the switch connects D2 to ground. Either leg can connect to either side.
+We connect one leg to of the tilt switch to **D2** and the other to **GND** in the arduino. The code uses `INPUT_PULLUP`, which makes D2 read `HIGH` when the switch is open and `LOW` when the switch connects D2 to ground. Either leg can connect to either side.
 
 Think of the complete action as a chain:
 
@@ -56,7 +58,7 @@ This small component can be used beyond a Magic 8 Ball. Imagine a sculptural obj
 
 ## 4. The I²C LCD: the voice of the oracle
 
-An **LCD** is a liquid crystal display. The **1602** model has two rows, each with room for **16 characters**. Its I²C adapter allows the Arduino to send text through two signal connections, **SDA** for data and **SCL** for the clock, plus power and ground. The screen has no knowledge of the question. It displays the characters the programme gives it.
+An **LCD** is a liquid crystal display. The **1602** model has two rows, each with room for **16 characters**. Its I²C adapter allows the Arduino to send text through two signal connections, **SDA** for data and **SCL** for the clock, plus power and ground. The screen has no knowledge of the question, it only displays the characters the programme gives it.
 
 You can think of the screen as the **voice** of the oracle, but it is a very particular kind of voice. It speaks in short lines, with limited space, no rich typography and little room for explanation. That limitation can become an artistic decision.
 
@@ -66,11 +68,11 @@ Consider the difference between **YES**, **NOT YET**, **LOOK AGAIN** and **WHO I
 
 ### What if the oracle spoke through sound instead?
 
-Instead of displaying *YES*, perhaps the oracle could make a short bright sound. An uncertain answer might be a repeating rhythm, a slowly changing pitch or silence. In another project, the response could be communicated through light, movement or vibration.
+Instead of displaying *YES*, perhaps the oracle could make a short loud sound. An uncertain answer might be a repeating rhythm, a slowly changing pitch or silence. In another project, the response could be communicated through light, movement or vibration.
 
 With sound, you would need to think about **pitch, rhythm, volume, duration, silence and how people interpret what they hear**. Would everyone understand the same sound in the same way? Would sounds communicate more than words, or make the prediction more ambiguous?
 
-Our first circuit uses the LCD. You do not need a speaker or buzzer to complete it, but you can carry these questions into later sound experiments.
+Our first circuit only uses the LCD. You do not need a speaker or buzzer to complete it, but you can carry these questions into later sound experiments.
 
 ## 5. Build the circuit
 
@@ -87,7 +89,7 @@ Use the component labels rather than relying on wire colours.
 
 Both GND connections can use separate ground pins or a shared breadboard ground rail. The tilt switch has no polarity.
 
-**Test the circuit in [Wokwi](https://wokwi.com/projects/480869321505295361)** before assembling it with physical parts. In the simulation, the slide switch's middle pin connects to D2, one outer pin connects to GND and the other outer pin remains unused.
+**Test the circuit in [Wokwi](https://wokwi.com/projects/480869321505295361)** before assembling it with physical parts. In the simulation, the slide switch's middle pin connects to D2, one outer pin connects to GND and the other outer pin remains unused (this is because wokwi doesn't have a tilt switch, it's ok!, we do!). To see the simulation in action, you will need to tap on the switch so that it triggers movement/response.
 
 For the physical circuit, select **Arduino UNO R4 WiFi** and the correct port in Arduino IDE. Install `hd44780` by Bill Perry through Library Manager, then upload the same programme. If the LCD lights up but displays nothing legible, check the connections and try turning the small contrast potentiometer on its I²C adapter.
 
@@ -158,7 +160,7 @@ There are four important ideas in this programme.
 
 ## 7. Experiment with the code
 
-Change the programme, restart the Wokwi simulation or upload it again to the Arduino, and observe what happens. You can try these challenges in any order.
+Change the programme, restart the Wokwi simulation or upload it again to the Arduino IDE, and see what happens. You can try these challenges in any order.
 
 ### Challenge 1. Write a different oracle
 
@@ -227,7 +229,6 @@ Sketch a possible object and think about these questions:
 - How would the experience change if the oracle communicated through sound or light rather than words?
 - Who is the author of its predictions, and who gets to interpret them?
 
-Your circuit can remain separate from the enclosure for now. There is no need to modify the hand-painted example.
 
 ## 9. Share what changed
 
@@ -242,7 +243,7 @@ Demonstrate one prediction, explain a change you made to the code, and show how 
 - **There is no prediction:** turn the tilt switch into a different orientation. In Wokwi, move the slide switch to open and then close the connection.
 - **The prediction appears more than once:** mechanical contacts can briefly chatter; allow the switch to settle before turning it again.
 - **Your text is cut off:** each LCD line has only 16 character positions.
-- **Wokwi and your board look different:** Wokwi is simulating an UNO R3; the class uses an UNO R4 WiFi. Select the UNO R4 WiFi when uploading to the physical device.
+- **Wokwi and your board look different:** Wokwi is simulating an UNO R3; the class uses an UNO R4 WiFi. Select the UNO R4 WiFi when uploading to the physical device from your arduino IDE.
 
 ## Images and further reading
 
